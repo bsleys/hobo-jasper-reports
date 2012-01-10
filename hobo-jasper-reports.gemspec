@@ -9,5 +9,6 @@ spec = Gem::Specification.new do |s|
   s.author = "Bob Sleys"
   s.email = "bsleys@gmail.com"
   s.files = `git ls-files -x #{name}/* -z`.split("\0")
+  s.add_runtime_dependency('paperclip', [">=  2.3"])
 
 end

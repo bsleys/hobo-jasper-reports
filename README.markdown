@@ -1,4 +1,4 @@
-# hobo-jasper-reports
+# Hobo JasperReports
 
 * http://github.com/bsleys/hobo-jasper-reports
 
@@ -23,6 +23,8 @@ The gem is heavly based on the work here http://oldwiki.rubyonrails.org/rails/pa
 ## REQUIREMENTS:
 
  * Java is require to run the reports
+ * paperlip ~> 2.3
+ * paperclip_with_hobo is required see (http://cookbook.hobocentral.net/plugins/paperclip_with_hobo)
 
 ## INSTALL:
 
@@ -34,7 +36,35 @@ And then run
    
     bundle install
     rails generate hobo_jasper_reports:install
+    bundle exec hobo g migration
 
+Add the following to your application.dryml:
+
+    <include gem="hobo-jasper-reports"/>
+
+## USAGE:
+
+Edit REPORT_TYPES in report.rb model to setup new XML datasources for your reports.
+
+There are two parts to each report type <model>/<xmlview> (described below).  This is hard coded to a enum field because
+each model you wish to report on will need one or more xml datasources created and since this has to be done manualy
+anyway adding the appropriate string here seems to make sense.
+
+The model can be specified in either plural or sigular form.  This is useful if say on the index view of a model
+you want to be able to generate reports for all the models records you could use the plural form of the model name.
+Then on the show view of a specific record you should use the singular form of the model.
+
+The xmlview portion is the filename of an .rxml file stored in view/reports.
+
+The report model has the following fields
+
+name - Name of the report this is used in views etc.
+report_action - hold the REPORT_TYPES described above
+report_query_string - XML query string used in generating the report
+include - advanced optional option to include needed sub tables if specifying a filter
+filter - filter or where clause for database query
+output_file_name - file name the report will be download to
+output_file_type - file type the report will be exported to (:pdf, :xml, :rtf, :xls, :csv)
 
 ## LICENSE:
 

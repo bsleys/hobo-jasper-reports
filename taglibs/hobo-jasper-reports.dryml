@@ -1,0 +1,20 @@
+<extend tag="form" for="Report">
+	<old-form merge multipart>
+		<field-list: fields="name, report_action, include, filter, report_query_string, output_file_name, output_file_type, jasperreport">
+			<report-action-view:>
+				<input for="HoboFields::Types::EnumString" titleize="&false" />
+			</report-action-view:> 
+			<output-file-type-view:>
+				<input for="HoboFields::Types::EnumString" titleize="&false" />
+			</output-file-type-view:> 
+			<jasperreport-view:>
+				<% if @this.jasperreport_file_name.blank? %>
+					[No Report]
+				<% else %>
+				    <%= @this.jasperreport_file_name %>
+				<% end %>
+			    <br/><input for="Paperclip::Attachment" />
+			</jasperreport-view:>
+		</field-list:>
+	</old-form>
+</extend>
