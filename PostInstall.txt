@@ -1,0 +1,7 @@
+
+For more information on hobo-jasper-reports, see http://hobo-jasper-reports.rubyforge.org
+
+NOTE: Change this information in PostInstall.txt 
+You can also delete it if you don't want it.
+
+
