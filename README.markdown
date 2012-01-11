@@ -37,14 +37,21 @@ And then run
     bundle install
     rails generate hobo_jasper_reports:install
     bundle exec hobo g migration
+  
+The following file will be overwritten with hobo_jasper_reports:install
 
-Add the following to your application.dryml:
+	/app/controllers/reports_controller.rb
+	/app/controllers/admin/reports_controller.rb
+	/app/helpers/send_doc_helper.rb
+	/app/models/document.rb
+	/app/models/report.rb
+	/app/views/taglibs/application/hobo-jasper-reports.dryml
 
-    <include gem="hobo-jasper-reports"/>
+The migration will add a reports table to the database
 
 ## USAGE:
 
-Edit REPORT_TYPES in report.rb model to setup new XML datasources for your reports.
+Edit REPORT_TYPES in /app/models/report.rb to setup new XML datasources for your reports.
 
 There are two parts to each report type <model>/<xmlview> (described below).  This is hard coded to a enum field because
 each model you wish to report on will need one or more xml datasources created and since this has to be done manualy
