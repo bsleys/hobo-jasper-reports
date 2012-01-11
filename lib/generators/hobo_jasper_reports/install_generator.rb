@@ -5,10 +5,10 @@ module HoboJasperReports
 
       desc "Installs Hobo Models and controlers to work with Jasper Reports"
       def install
-        base_pathname = Pathname.new(File.expand_path('../../../../app', __FILE__))
-        Dir[File.expand_path('../../../../app/**/*.*', __FILE__)].each do |fn|
+        base_pathname = Pathname.new(File.expand_path('../../../../hobo-jasper-reports', __FILE__))
+        Dir[File.expand_path('../../../../hobo-jasper-reports/**/*.*', __FILE__)].each do |fn|
           rfn=Pathname.new(fn).relative_path_from(base_pathname)
-          copy_file "app/#{rfn}", "app/#{rfn}"
+          copy_file "hobo-jasper-reports/#{rfn}", "app/#{rfn}"
         end
       end      
     end
