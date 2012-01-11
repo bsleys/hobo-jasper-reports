@@ -65,13 +65,13 @@ The xmlview portion is the filename of an .rxml file stored in view/reports.
 
 The report model has the following fields
 
-name - Name of the report this is used in views etc.
-report_action - hold the REPORT_TYPES described above
-report_query_string - XML query string used in generating the report
-include - advanced optional option to include needed sub tables if specifying a filter
-filter - filter or where clause for database query
-output_file_name - file name the report will be download to
-output_file_type - file type the report will be exported to (:pdf, :xml, :rtf, :xls, :csv)
+	name - Name of the report this is used in views etc.
+	report_action - hold the REPORT_TYPES described above
+	report_query_string - XML query string used in generating the report
+	include - advanced optional option to include needed sub tables if specifying a filter
+	filter - filter or where clause for database query
+	output_file_name - file name the report will be download to
+	output_file_type - file type the report will be exported to (:pdf, :xml, :rtf, :xls, :csv)
 
 ## LICENSE:
 
