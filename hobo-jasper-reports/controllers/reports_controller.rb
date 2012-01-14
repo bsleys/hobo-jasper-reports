@@ -11,7 +11,7 @@ class ReportsController < ApplicationController
       cid = params[:cid] || ""
       @robj = Kernel.const_get(action[0].singularize.titleize).scoped
       @robj = @robj.where(:id => cid) if !cid.blank?
-      @robj = @robj.includes(@report.include) if !@report.include.blank?
+      @robj = @robj.includes(Report::REPORT_INCLUDES[action[1]]) if Report::REPORT_INCLUDES[action[1]]
       @robj = @robj.where(@report.filter) if !@report.filter.blank? 
 
       if @report.jasperreport_file_name?

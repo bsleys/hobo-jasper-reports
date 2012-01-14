@@ -1,6 +1,6 @@
 <extend tag="form" for="Report">
 	<old-form merge multipart>
-		<field-list: fields="name, report_action, include, filter, report_query_string, output_file_name, output_file_type, jasperreport">
+		<field-list: fields="name, report_action, filter, report_query_string, output_file_name, output_file_type, jasperreport">
 			<report-action-view:>
 				<input for="HoboFields::Types::EnumString" titleize="&false" />
 			</report-action-view:> 
