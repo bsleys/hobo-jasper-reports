@@ -37,6 +37,10 @@ And then run
     bundle install
     rails generate hobo_jasper_reports:install
     bundle exec hobo g migration
+    
+Add to admin_site.dryml
+    
+    <include gem="hobo-jasper-reports"/>
   
 The following file will be overwritten with hobo_jasper_reports:install
 
@@ -45,7 +49,6 @@ The following file will be overwritten with hobo_jasper_reports:install
 	/app/helpers/send_doc_helper.rb
 	/app/models/document.rb
 	/app/models/report.rb
-	/app/views/taglibs/application/hobo-jasper-reports.dryml
 
 The migration will add a reports table to the database
 
