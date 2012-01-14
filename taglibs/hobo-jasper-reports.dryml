@@ -18,3 +18,17 @@
 		</field-list:>
 	</old-form>
 </extend>
+
+<extend tag="show-page" for="Report">
+	<old-show-page merge>
+		<field-list: fields="name, report_action, filter, report_query_string, output_file_name, output_file_type, jasperreport_file_name">
+			<jasperreport-file-name-view:>
+				<% if this.blank? %>
+					[No Report]
+				<% else %>
+				    <%= this %>
+				<% end %>
+			</jasperreport-file-name-view:>
+		</field-list:>
+	</old-show-page>
+</extend>
