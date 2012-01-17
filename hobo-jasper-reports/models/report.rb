@@ -39,7 +39,7 @@ class Report < ActiveRecord::Base
     timestamps
   end
 
-  has_attached_file :jasperreport
+  has_attached_file :jasperreport, :path => ":rails_root/jasper_reports/:attachment/:id/:style/:filename"
   
   # validates_attachment_presence :jasperreport
   validates_attachment_content_type :jasperreport, :content_type => ['application/octet-stream']
